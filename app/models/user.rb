@@ -7,4 +7,8 @@ class User < ApplicationRecord
     
     has_secure_password
     has_many :tasks
+    
+    def has_written(task)
+     tasks.exists?(id: task.id)
+    end
 end
